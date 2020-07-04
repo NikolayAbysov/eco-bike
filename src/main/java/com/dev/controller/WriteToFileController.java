@@ -22,8 +22,9 @@ class WriteToFileController {
             }
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true));
             for (Bike bike : bikes) {
-                if (!bike.isLoadedFromFile())
-                writer.write(bike.toString());
+                if (!bike.isLoadedFromFile()) {
+                    writer.write(bike.toString());
+                }
             }
             writer.close();
         } catch (IOException e) {
